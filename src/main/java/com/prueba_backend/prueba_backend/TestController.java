@@ -17,4 +17,10 @@ public class TestController {
     public String status() {
         return "Application status: UP";
     }
+
+    // Ruta raíz
+    @GetMapping("/")
+    public String root() {
+        return "Welcome to the Spring Boot Application!";
+    }
 }
