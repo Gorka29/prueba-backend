@@ -20,7 +20,7 @@ public class TestController {
     }
 
     @GetMapping("/prueba")
-    public String status() {
+    public String prueba() {
         return "Esto es una prueba de si recoge los cambios nuevos GitHub";
     }
 
