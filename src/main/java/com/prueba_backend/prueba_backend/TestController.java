@@ -19,6 +19,11 @@ public class TestController {
         return "Application status: UP";
     }
 
+    @GetMapping("/prueba")
+    public String status() {
+        return "Esto es una prueba de si recoge los cambios nuevos GitHub";
+    }
+
     // Ruta raíz
     @GetMapping("/")
     public String root() {
