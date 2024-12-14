@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/test")
-@CrossOrigin(origins = "http://localhost:4200") // Habilita CORS para tu frontend
+@CrossOrigin(origins = "*")
 public class TestController {
 
     @GetMapping("/hello")
