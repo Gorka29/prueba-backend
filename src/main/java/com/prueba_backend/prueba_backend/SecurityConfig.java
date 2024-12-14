@@ -27,18 +27,17 @@ public class SecurityConfig {
     }
 
     @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
+public CorsFilter corsFilter() {
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    CorsConfiguration config = new CorsConfiguration();
 
-        // Configurar CORS
-        config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("https://davidperezfisioterapia.vercel.app")); // Frontend permitido
-        config.setAllowedOrigins(Arrays.asList("http://localhost:4200")); // Frontend permitido
-        config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization"));
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+    // Configurar CORS
+    config.setAllowCredentials(true);
+    config.setAllowedOrigins(Arrays.asList("http://localhost:4200", "https://davidperezfisioterapia.vercel.app")); // Combina todas las URLs permitidas
+    config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization"));
+    config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        source.registerCorsConfiguration("/**", config);
-        return new CorsFilter(source);
-    }
+    source.registerCorsConfiguration("/**", config);
+    return new CorsFilter(source);
+}
 }
