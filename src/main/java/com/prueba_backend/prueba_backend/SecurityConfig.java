@@ -31,12 +31,10 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
     
-        // Configurar CORS
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("https://davidperezfisioterapia.vercel.app");
-        config.addAllowedOrigin("http://localhost:4200");
-        config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization"));
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.addAllowedOrigin("*"); // Permitir todas las solicitudes temporalmente
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
     
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
