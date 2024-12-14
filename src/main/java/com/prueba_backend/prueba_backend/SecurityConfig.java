@@ -33,7 +33,8 @@ public class SecurityConfig {
     
         // Configurar CORS
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("http://localhost:4200", "https://davidperezfisioterapia.vercel.app"));
+        config.addAllowedOrigin("https://davidperezfisioterapia.vercel.app");
+        config.addAllowedOrigin("http://localhost:4200");
         config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
     
